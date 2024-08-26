@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float senha,  multi, aux, xsenha, cont;
+    char d1, d2, d3, d4;
+    cont = 0;
+    for ( senha = 1000; senha <= 9999; senha++)
+    {
+            d1= senha / 1000;
+            aux = d1 * 1000;
+            xsenha = senha - aux;
+
+            d2 = xsenha / 100;
+            aux = d2 * 100;
+            xsenha = xsenha - aux;
+
+            if (d1 != d2)
+            {
+                d3 = xsenha / 10;
+                aux = d3 * 10;
+                xsenha = xsenha - aux;
+
+                d4 = xsenha;
+
+                if (d1 != d3 && d1 != d4 && d2 != d3 && d2 != d4 && d3 != d4)
+                {
+                    if (0 == senha % 38)
+                    {
+                        printf("%f\n", senha);
+                        cont++;
+                    }
+
+
+                }
+
+
+            }
+
+    }
+    printf("%f\n", cont)
+    return 0
+}
+
+
